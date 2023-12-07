@@ -888,7 +888,11 @@
         const orderArr = order.split('.')
         if(orderArr.length === 1 && orderArr[0] === '0') return false
         if(orderArr.length === 2){
-          if(orderArr[0] === '0' || orderArr[1] === '0') return false
+          if(orderArr[0] === '0' || orderArr[1] === '0') {
+            console.log('return false')
+            return false
+            
+          }
         }
         return true           
       }
@@ -942,13 +946,15 @@
       const sss = isValidOrder(row.order)
       console.log('AAA', sss);
 
-      if(isValidOrder(row.order)){
+      if(!isValidOrder(row.order)){
         console.log(row.id)
         const curIdx = buildElements.value.findIndex((build: IObject) => build.id === row.id)
         console.log('curIdx', curIdx);
         
         // buildElements.value[curIdx].error = true
         buildElements.value.forEach((build: IObject) => {
+          console.log(build);
+          
           if(build.id === row.id){
              // eslint-disable-next-line no-param-reassign
              build.error = true
