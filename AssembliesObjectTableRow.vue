@@ -5,7 +5,7 @@
         v-if="arrayCode.includes(head.code)"
         :id="`${tableId}_${index}_${ind}`"
         class="table_base__td-body table_base__td-body-th"
-        :class="{ collisions: modelValueData.error_message && (modelValueData.error_message !== 'Дубликат номера' || modelValueData.error_message !== 'LLL') }"
+        :class="{ collisions: modelValueData.error_message && (modelValueData.error_message !== 'Дубликат номера' && modelValueData.error_message !== 'LLL') }"
       >
         <div class="cell">
           <div class="actions" :class="{ blue: areIconsBlue }">
@@ -129,7 +129,7 @@
         v-else
         :id="`${tableId}_${index}_${ind}`"
         class="table_base__td-body"
-        :class="{ collisions: modelValueData.error_message && (modelValueData.error_message !== 'Дубликат номера' || modelValueData.error_message !== 'LLL') }"
+        :class="{ collisions: modelValueData.error_message && (modelValueData.error_message !== 'Дубликат номера' && modelValueData.error_message !== 'LLL') }"
       >
         <div class="cell">
           <span>{{ modelValueData[head.code] }}</span>
